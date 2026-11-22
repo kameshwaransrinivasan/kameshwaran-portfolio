@@ -37,15 +37,15 @@ section{padding:clamp(72px,10vw,140px) 0}
 .burger{display:none;justify-self:end;background:none;border:0;width:40px;height:40px;cursor:pointer;color:var(--text)}
 .burger i{display:block;width:22px;height:2px;background:currentColor;margin:5px auto;transition:.3s}
 /* hero */
-.hero{padding:clamp(28px,5vw,64px) 0 clamp(48px,7vw,90px);position:relative;overflow-x:clip}
-.stage{--pw:clamp(250px,36vw,480px);--fs:clamp(2rem,9.2vw,9.4rem);display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;margin-top:10px}
+.hero{--hero-shape:#5FA595;padding:clamp(28px,5vw,64px) 0 clamp(48px,7vw,90px);position:relative;overflow-x:clip}
+.stage{--pw:clamp(240px,29vw,400px);--fs:clamp(2rem,9.2vw,9.4rem);display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;margin-top:10px}
 .name{grid-area:1/1;align-self:start;z-index:0;margin:calc(var(--pw)*.025 - var(--fs)*.45) 0 0;font:800 var(--fs)/.9 var(--disp);letter-spacing:-.04em;text-transform:uppercase;color:var(--primary);white-space:nowrap;text-align:center}
-.portrait{grid-area:1/1;position:relative;z-index:1;width:var(--pw);aspect-ratio:432/490}
-.portrait::before,.portrait::after{content:"";position:absolute;bottom:0;left:-8%;right:-8%;height:83%;border-radius:50% 50% 0 0/100% 100% 0 0;z-index:-1}
-.portrait::before{background:var(--accent)}
+.portrait{grid-area:1/1;position:relative;z-index:1;width:var(--pw);aspect-ratio:1085/1450}
+.portrait::before,.portrait::after{content:"";position:absolute;bottom:0;left:-8%;right:-8%;height:86%;border-radius:50% 50% 0 0/100% 100% 0 0;z-index:-1}
+.portrait::before{background:linear-gradient(180deg,color-mix(in srgb,var(--hero-shape) 84%,#fff),var(--hero-shape) 60%)}
 .portrait::after{background:var(--grad);transform:translateY(-5%);z-index:-2}
-.portrait img{position:absolute;left:0;bottom:0;width:100%;height:auto;object-fit:contain;transform:translateX(-5%)}
-.chip{position:absolute;z-index:4;right:80%;bottom:12%;width:clamp(170px,22vw,230px);background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:16px;padding:10px 14px;font:600 .8rem/1.35 var(--body);box-shadow:0 12px 30px -14px rgba(0,0,0,.45)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.chip{position:absolute;z-index:4;right:97%;bottom:12%;width:clamp(170px,22vw,230px);background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:16px;padding:10px 14px;font:600 .8rem/1.35 var(--body);box-shadow:0 12px 30px -14px rgba(0,0,0,.45)}
 .chip b{display:flex;align-items:center;gap:7px;color:var(--secondary);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}.chip b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
 .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:clamp(28px,4vw,48px)}
 .hero-foot p{margin:0;max-width:40ch;color:var(--text2);font-size:.95rem}
@@ -125,7 +125,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:900px){.nav .wrap{grid-template-columns:1fr auto}.grid{grid-template-columns:repeat(2,1fr)}.proj,.about{grid-template-columns:1fr}.links{display:none}.burger{display:block}
 .links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--bg);padding:12px 20px 22px;border-bottom:1px solid var(--border);gap:16px}.links.open a{font-size:1.05rem}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}}
-@media(max-width:700px){.stage{--pw:min(76vw,330px);--fs:clamp(1.6rem,9vw,3.3rem)}.ci{grid-template-columns:1fr}
+@media(max-width:700px){.stage{--pw:min(72vw,300px);--fs:clamp(1.6rem,9vw,3.3rem)}.ci{grid-template-columns:1fr}
 .hero-foot .mid{justify-content:flex-start;text-align:left}.hero-foot{margin-top:76px}.chip{right:auto;left:50%;bottom:-54px;transform:translateX(-50%);width:min(88vw,300px);text-align:center}.chip b{justify-content:center}}
 .lb{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;color:#F6F1E6;overflow:hidden}
 .lb::backdrop{background:rgba(11,26,20,.86);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);animation:lbfade .35s ease both}.lb.out::backdrop{animation:lbfade .22s ease reverse both}
@@ -198,7 +198,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <section class="hero" style="padding-bottom:0"><div class="wrap">
 <div class="stage">
 <h1 class="name rv">Kameshwaran S</h1>
-<div class="portrait rv"><img src="assets/images/kameshwaran-portrait.png" width="432" height="577" alt="Portrait of Kameshwaran S smiling, wearing a green shirt and a college lanyard" decoding="async" fetchpriority="high"><div class="chip"><b>Studying</b>B.Tech — Artificial Intelligence and Data Science · 2027</div></div>
+<div class="portrait rv"><img src="assets/images/kameshwaran-portrait.png" width="1085" height="1450" alt="Portrait of Kameshwaran S smiling, wearing glasses, a black shirt and light trousers" decoding="async" fetchpriority="high"><div class="chip"><b>Studying</b>B.Tech — Artificial Intelligence and Data Science · 2027</div></div>
 </div>
 <div class="hero-foot">
 <p class="rv"><span class="rule"></span>Hi, I’m Kameshwaran S — an Artificial Intelligence and Data Science undergraduate from Tamil Nadu, India.</p>
